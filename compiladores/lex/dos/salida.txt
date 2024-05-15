@@ -1,0 +1,5 @@
+Estamos en el Comando inicio ejecutado
+ de las practicas lex del curso de compiladores, se hara un Comando pare recibido
+ a mitad de la clase y de seguro no habran mas Comando pare recibido
+ al cumplir las dos horas de clase. La siguiente clase se continuara con el Comando inicio ejecutado
+ de las practicas

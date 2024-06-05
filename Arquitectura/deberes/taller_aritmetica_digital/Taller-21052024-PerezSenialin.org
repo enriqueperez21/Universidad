@@ -1,0 +1,109 @@
+#+options: H:2
+#+latex_class: beamer
+#+columns: %45ITEM %10BEAMER_env(Env) %10BEAMER_act(Act) %4BEAMER_col(Col) %8BEAMER_opt(Opt)
+#+beamer_theme: Madrid
+#+beamer_color_theme:
+#+beamer_font_theme:
+#+beamer_inner_theme:
+#+beamer_outer_theme:
+#+beamer_header:
+
+#+options: ':nil *:t -:t ::t <:t H:2 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Taller Aritmética Digital y Lógica Digital 1
+#+date: <2024-06-05 mié>
+#+author: Luis Enrique Perez Señalin
+#+email: luis.perez05@epn.edu.ec
+#+language: es
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 27.1 (Org mode 9.3)
+
+* Ejercicios
+** presentacion 1
+[[./enunciado1.png]]
+
+
+* Respuestas
+** presentacion 2
+Ejercicio 1
++-----+-----+-------+
+|x1   | x2  |x1(+)x2|
++-----+-----+-------+
+|  0  |  0  |   0   |
++-----+-----+-------+
+|  0  |  1  |   1   |
++-----+-----+-------+
+|  1  |  0  |   1   |
++-----+-----+-------+
+|  1  |  1  |   0   |
++-----+-----+-------+
+SOP 
+$$(\bar{x1}*x2)+(x1*\bar{x2})$$
+
+** Presentacion3
+Ejercicio2
+POS
+$$F(x1,x2) = (x1+x2) * (\bar{x1}+\bar{x2})$$
+
+** Presentacion4
+Ejercicio3
+
+
+** Presentacion5
+Ejercicio4
+$$F = ACD + \bar{A}BCD$$
+$$  = CD(A+\bar{A}B)  $$
+$$  = CD(A+B)         $$
+
+** Presentacion6
+Ejercicio5
+$$F = ABC + A\bar{B}\overline{\bar{A}\bar{C}}$$                                                        
+$$  = ABC + A\bar{B}(\overline{\overline{A + C}})$$                                                        
+$$  = ABC + A\bar{B}(A+C)$$
+$$  = ABC + A\bar{B} + AC\bar{B}$$
+$$  = AC(B + \bar{B}) + A\bar{B}$$
+$$  = AC + A\bar{B}$$
+$$  = A(C + \bar{B}$$
+
+** Presentacion7
+Ejercicio 6
+$$F(x1,x2) = \bar{X1}X2 + X1\bar{X2}$$
+
+** Presentacion8
+Ejercicio 7
++---+---+---+---+
+| A | B | C | F |
++---+---+---+---+
+| 0 | 0 | 0 | 0 |
++---+---+---+---+
+| 0 | 0 | 1 | 0 |
++---+---+---+---+
+| 0 | 1 | 0 | 1 |
++---+---+---+---+
+| 0 | 1 | 1 | 1 |
++---+---+---+---+
+| 1 | 0 | 0 | 0 |
++---+---+---+---+
+| 1 | 0 | 1 | 0 |
++---+---+---+---+
+| 1 | 1 | 0 | 1 |
++---+---+---+---+
+| 1 | 1 | 1 | 0 |                                                               
++---+---+---+---+
+
+** Presentacion9
+Tabla
+
++----+---+---+---+---+
+|A\BC| 00| 01| 11| 10|
++----+---+---+---+---+
+|  0 |   |   | 1 | 1 |
++----+---+---+---+---+
+|  1 |   |   |   | 1 |
++----+---+---+---+---+
+
+$$F = \bar{A}B + B\bar{C}+A\bar{B}C$$

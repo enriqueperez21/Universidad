@@ -39,8 +39,8 @@
 
 
 \section{Ejercicios}
-\label{sec:orgca1d270}
-\begin{frame}[label={sec:org828c30f}]{presentacion 1}
+\label{sec:org249f098}
+\begin{frame}[label={sec:org6d4aa2f}]{presentacion 1}
 \begin{center}
 \includegraphics[width=.9\linewidth]{./enunciado1.png}
 \end{center}
@@ -48,8 +48,8 @@
 
 
 \section{Respuestas}
-\label{sec:orgb838cf3}
-\begin{frame}[label={sec:org506d328}]{presentacion 2}
+\label{sec:orge40582b}
+\begin{frame}[label={sec:orgf3968cd}]{presentacion 2}
 Ejercicio 1
 \begin{center}
 \begin{tabular}{|l|l|l|}
@@ -70,25 +70,25 @@ SOP
 $$(\bar{x1}*x2)+(x1*\bar{x2})$$
 \end{frame}
 
-\begin{frame}[label={sec:org6e7cfc4}]{Presentacion3}
+\begin{frame}[label={sec:orge60c196}]{Presentacion3}
 Ejercicio2
 POS
 $$F(x1,x2) = (x1+x2) * (\bar{x1}+\bar{x2})$$
 \end{frame}
 
-\begin{frame}[label={sec:orgfebc707}]{Presentacion4}
+\begin{frame}[label={sec:orge317236}]{Presentacion4}
 Ejercicio3
 \end{frame}
 
 
-\begin{frame}[label={sec:orgca56101}]{Presentacion5}
+\begin{frame}[label={sec:org6d4c5b3}]{Presentacion5}
 Ejercicio4
 $$F = ACD + \bar{A}BCD$$
 $$  = CD(A+\bar{A}B)  $$
 $$  = CD(A+B)         $$
 \end{frame}
 
-\begin{frame}[label={sec:orgb0f34b5}]{Presentacion6}
+\begin{frame}[label={sec:org4e99b24}]{Presentacion6}
 Ejercicio5
 $$F = ABC + A\bar{B}\overline{\bar{A}\bar{C}}$$                                                        
 $$  = ABC + A\bar{B}(\overline{\overline{A + C}})$$                                                        
@@ -99,12 +99,12 @@ $$  = AC + A\bar{B}$$
 $$  = A(C + \bar{B}$$
 \end{frame}
 
-\begin{frame}[label={sec:orgb791398}]{Presentacion7}
+\begin{frame}[label={sec:org0421640}]{Presentacion7}
 Ejercicio 6
 $$F(x1,x2) = \bar{X1}X2 + X1\bar{X2}$$
 \end{frame}
 
-\begin{frame}[label={sec:org3b98bc4}]{Presentacion8}
+\begin{frame}[label={sec:org652b871}]{Presentacion8}
 Ejercicio 7
 \begin{center}
 \begin{tabular}{|l|l|l|l|}
@@ -131,28 +131,20 @@ A & B & C & F \\
 \end{center}
 \end{frame}
 
-\begin{frame}[label={sec:orgac50fac}]{Presentacion9}
+\begin{frame}[label={sec:orge3f7749}]{Presentacion9}
 Tabla
 
-\sout{----}---\sout{---}---\sout{---}
 \begin{center}
-\begin{tabular}{lrrrr}
-A\BC & 00 & 01 & 11 & 10\\
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+A$\backslash$BC & 00 & 01 & 11 & 10 \\
+\hline
+0 & & & 1 & 1 \\
+\hline
+1 & & & & 1 \\
+\hline
 \end{tabular}
 \end{center}
-\sout{----}---\sout{---}---\sout{---}
-\begin{center}
-\begin{tabular}{rllrr}
-0 &  &  & 1 & 1\\
-\end{tabular}
-\end{center}
-\sout{----}---\sout{---}---\sout{---}
-\begin{center}
-\begin{tabular}{rlllr}
-1 &  &  &  & 1\\
-\end{tabular}
-\end{center}
-\sout{----}---\sout{---}---\sout{---}
 
 $$F = \bar{A}B + B\bar{C}+A\bar{B}C$$
 \end{frame}

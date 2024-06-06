@@ -22,13 +22,11 @@
 #+exclude_tags: noexport
 #+creator: Emacs 27.1 (Org mode 9.3)
 
-* Ejercicios
-** presentacion 1
+* Ejercicios** presentacion 1
 [[./enunciado1.png]]
 
 
-* Respuestas
-** presentacion 2
+* Respuestas** presentacion 2
 Ejercicio 1
 +-----+-----+-------+
 |x1   | x2  |x1(+)x2|
@@ -42,8 +40,7 @@ Ejercicio 1
 |  1  |  1  |   0   |
 +-----+-----+-------+
 SOP 
-$$(\bar{x1}*x2)+(x1*\bar{x2})$$
-** Presentacion3
+$$(\bar{x1}*x2)+(x1*\bar{x2})$$** Presentacion3
 Ejercicio2
 POS
 $$F(x1,x2) = (x1+x2) * (\bar{x1}+\bar{x2})$$

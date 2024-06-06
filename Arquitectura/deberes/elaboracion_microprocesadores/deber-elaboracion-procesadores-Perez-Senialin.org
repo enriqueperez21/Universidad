@@ -1,0 +1,83 @@
+#+options: H:2
+#+latex_class: beamer
+#+columns: %45ITEM %10BEAMER_env(Env) %10BEAMER_act(Act) %4BEAMER_col(Col) %8BE$
+#+beamer_theme: Madrid
+#+beamer_color_theme:
+#+beamer_font_theme:
+#+beamer_inner_theme:
+#+beamer_outer_theme:
+#+beamer_header:
+
+#+options: ':nil *:t -:t ::t <:t H:2 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Deber elaboracion procesadores                           
+#+date: <2024-06-05 mié>                                                        
+#+author: Luis Enrique Perez Señalin                                            
+#+email: luis.perez05@epn.edu.ec 
+
+#+language: es
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 27.1 (Org mode 9.3)
+
+* Procesos
+** Presentacion0
+Pasos para la elaboración de un microprocesador
+
+** Presentacion1
+Paso 1:
+Usando arena la cual contiene silicio, se fabrica un mono cristal.
+[[./paso1.jpg]]
+
+** Presentacion2
+Paso 2:
+Se corta en los extremos para obtener un cilindro perfecto.
+Luego se cortan en oleas, del cual se fabrican cientos de procesadores.
+[[./paso2.jpeg]]
+
+** Presentacion3
+Paso 3:
+Se pulen las oleas para remover defectos/impurezas.
+[[./paso3.png]]
+
+** Presentacion4
+Paso 4:
+Se dibujan los transistores dentro del wafer que componen el procesador.
+[[./paso4.jpeg]]
+
+** Presentacion5
+Paso 5:
+Se pintan capas sobre el wafer para que reciba el aporte de átomos.
+[[./paso5.jpeg]]
+
+** Presentacion6
+Paso 6:
+Se utiliza luz no visible para el proceso, debido a que la luz es demasiado "grande"
+[[./paso6.jpeg]]
+
+** Presentacion7
+Paso 7:
+Despues del proceso litografico que pasó el wafer, se cortan los wafers.
+Los microprocesadores extraidos del wafer cortado se individualizan
+[[./paso7.jpeg]]
+
+** Presentacion8
+Paso 8:
+Todo el proceso se realiza en clean rooms.
+[[./paso8.jpeg]]
+
+** Presentacion9
+Paso 9:
+Cada placa de los microprocesadores tendra una capsula protectora plastica o ceramica.
+Si es necesario la capsula recibira un disipador termico de metal.
+[[./paso9.jpg]]
+
+** Paso final
+Paso final:
+EL proceso de escrito toma de 2 a 3 meses para ser completados.
+De cada cristal de silicio extra puro se obtienen decenas de miles de microprocesadores.
+[[./paso10.jpeg]]
+

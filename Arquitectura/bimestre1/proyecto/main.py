@@ -51,25 +51,30 @@ def main():
     num_entero = int(num)
     num_decimal = (num - num_entero) #Problema
 
+    #Imprimir el número ingresado
+    print(f"El numero es: {num}")
+
     binario_entero = entero_a_binario(num_entero)
     binario_fraccion = fraccion_a_binario(num_decimal)
     binario = str(binario_entero)+str(binario_fraccion)[1:]
-    print(num_entero, signo, num_entero, num_decimal, binario)
-
+    
     exponente, nuevo_binario = calcular_exponente_y_normalizar(binario)
-    print(exponente, nuevo_binario)
 
     exponente_sesgado = 127 + exponente
     exponente_sesgado_binario = str(entero_a_binario(exponente_sesgado))
-    print(exponente_sesgado, exponente_sesgado_binario)
-
+    
     binario_fraccion = nuevo_binario[2:]
     mantisa = calcular_mantisa(binario_fraccion)
-    print(binario_fraccion, mantisa) 
     bit_signo = ''
     if(signo): bit_signo = '1'
     else: bit_signo = '0'
-    return bit_signo +'|'+ exponente_sesgado_binario +'|'+ mantisa
+    print(f"Bit del signo: {bit_signo}")
+    print(f"Exponente: {exponente}")
+    print(f"Exponente sesgado: {exponente_sesgado}")
+    print(f"Exponente sesgado binario: {exponente_sesgado_binario}")
+    print(f"Mantisa: {mantisa}")
+    return bit_signo + exponente_sesgado_binario + mantisa
 
 numero_IEEE = main()
 print(numero_IEEE)
+print(hex(int(numero_IEEE,2)))

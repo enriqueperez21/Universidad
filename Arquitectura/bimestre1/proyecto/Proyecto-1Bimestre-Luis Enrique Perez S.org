@@ -1,0 +1,48 @@
+#+options: H:2
+#+latex_class: beamer
+#+columns: %45ITEM %10BEAMER_env(Env) %10BEAMER_act(Act) %4BEAMER_col(Col) %8BEAMER_opt(Opt)
+#+beamer_theme: Madrid
+#+beamer_color_theme:
+#+beamer_font_theme:
+#+beamer_inner_theme:
+#+beamer_outer_theme:
+#+beamer_header:
+
+#+options: ':nil *:t -:t ::t <:t H:2 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
+#+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
+#+options: timestamp:t title:t toc:t todo:t |:t
+#+title: Proyecto 1 Bimestre
+#+date: <2024-06-19 mié>
+#+author: Luis Enrique Perez Señalin
+#+email: luis.perez05@epn.edu.ec
+#+language: es
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 27.1 (Org mode 9.3)
+
+* Funciones Utilizadas
+
+** Función entero a binario
+Entero a binario:
+[[./img_codigo/entero_binario.png]] 
+
+** Funcion fraccion a binario
+Fraccion a binario:
+[[./img_codigo/fraccion_binario.png]] 
+
+** Calculo Exponente
+Funcion retorna exponente y binario normalizado
+
+[[./img_codigo/calculo_exponente.png]]
+
+** Calculo Mantisa
+Funcion que calcula la mantisa
+[[./img_codigo/calculo_mantisa.png]] 
+
+** Llamado a la funcion
+Llamado del codigo y conversion a hexadecimal:
+
+[[./img_codigo/llamado_funcion.png]]
+

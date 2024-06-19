@@ -1,0 +1,61 @@
+% Created 2024-06-10 lun 18:27
+% Intended LaTeX compiler: pdflatex
+\documentclass[presentation]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usetheme{Madrid}
+\usecolortheme{}
+\usefonttheme{}
+\useinnertheme{}
+\useoutertheme{}
+\author{Luis Enrique Perez Señalin}
+\date{\textit{<2024-06-05 mié>}}
+\title{Circuitos combinatorios}
+
+\hypersetup{
+ pdfauthor={Luis Enrique Perez Señalin},
+ pdftitle={Circuitos combinatorios},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.1 (Org mode 9.3)}, 
+ pdflang={Spanish}}
+\begin{document}
+
+\maketitle
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+
+\section{Ejercicios}
+\label{sec:org923d10e}
+\begin{frame}[label={sec:orgb1695d3}]{Ejercicio1}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./ejercicio1.png}
+\end{center}
+\end{frame}
+
+\begin{frame}[label={sec:orgb879be5}]{Ejercicio2}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./ejercicio2.png}
+\end{center}
+\end{frame}
+
+\section{Resolución}
+\label{sec:org185bff1}
+
+\begin{frame}[label={sec:org17bff2c}]{Ejercicio 1 - 1}
+$$F(x1,x2) = (x1+x2) * (\bar{x1}+\overline{S})$$
+\end{frame}
+\end{document}

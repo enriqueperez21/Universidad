@@ -1,0 +1,60 @@
+@startuml
+
+!define Table(name, desc) class name as "desc"
+
+entity Clientes {
+  + id_cliente: int <<PK>>
+  --
+  nombre_cli: varchar(25)
+  dir_cli: varchar(22)
+  tel_cli: varchar(10)
+  fecha_nac: date
+}
+
+entity Facturas {
+  + num_factura: int <<PK>>
+  --
+  total: decimal(9, 2)
+  iva: decimal(9, 2)
+  fecha_fact: date
+  id_cliente: int <<FK>>
+}
+
+entity Items {
+  --
+  cant: int
+  num_factura: int <<FK>>
+  id_producto: int <<FK>>
+}
+
+entity Productos {
+  + id_producto: int <<PK>>
+  --
+  nombre_prod: varchar(30)
+  precio_unit: decimal(7, 2)
+  unidad: varchar(20)
+  id_tipo: int <<FK>>
+  id_proveedor: int <<FK>>
+}
+
+entity Proveedores {
+  + id_proveedor: int <<PK>>
+  --
+  nombre_prov: varchar(20)
+  ciudad_prov: varchar(11)
+  dir_prov: varchar(20)
+}
+
+entity Tipos {
+  + id_tipo: int <<PK>>
+  --
+  tipo: varchar(20)
+}
+
+Clientes ||--o{ Facturas: "posee"
+Facturas ||--o{ Items: "contiene"
+Items }o--|| Productos: "pertenece a"
+Productos }o--|| Proveedores: "proporcionado por"
+Productos }o--|| Tipos: "clasificado como"
+
+@enduml

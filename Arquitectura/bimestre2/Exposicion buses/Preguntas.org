@@ -1,0 +1,65 @@
+#+latex_class: article
+#+latex_class_options:
+#+latex_header:
+#+latex_header_extra:
+#+description:
+#+keywords:
+#+subtitle:
+#+latex_compiler: pdflatex
+#+date: \today
+
+
+#+title: Preguntas Q1
+#+date: <2024-06-24>
+#+author: Grupo Q1
+#+email: 
+#+language: es
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 27.1 (Org mode 9.3)
+
+* Preguntas Exposición Buses
+
+- ¿Qué función cumplen los buses del sistema en una arquitectura de computadoras y cuáles son los tipos más comunes que se utilizan en la actualidad?
+
+    Los buses del sistema son canales de comunicación que transfieren datos entre los componentes de una computadora, como la CPU, la memoria y los dispositivos de entrada/salida. Su función principal es permitir la interacción y la transferencia de datos de manera eficiente y coordinada.
+
+- ¿Cómo influye la velocidad y el ancho de banda del bus del sistema en el rendimiento general de un sistema informático y cómo se optimiza este componente en diseños modernos?
+    
+    La velocidad y el ancho de banda del bus del sistema son cruciales para el rendimiento general de un sistema informático:
+
+    - Velocidad del bus: Se refiere a la frecuencia con la que se pueden transferir datos por el bus. Una mayor velocidad permite que se transfieran más datos por segundo, mejorando el rendimiento.
+    - Ancho de banda: Es la cantidad de datos que el bus puede transportar en un ciclo de reloj. Un mayor ancho de banda permite mover más datos simultáneamente.
+
+- ¿Cuáles son los principales desafíos técnicos y de diseño al implementar buses del sistema en sistemas multiprocesador o en entornos de computación distribuida?
+    
+    Desafios en la implementación de buses del sistema
+    - Coherencia de caché: Mantener la coherencia de los datos almacenados en las cachés de diferentes procesadores.
+    - Latencia y sincronización: Minimizar la latencia y asegurar la sincronización de datos entre múltiples procesadores.
+    - Contención de bus: Manejar la contención y evitar cuellos de botella cuando varios procesadores acceden al bus simultáneamente.
+
+
+- ¿Qué diferencias y similitudes existen entre los buses del sistema utilizados en computadoras personales y en servidores de alta gama?
+
+    Similitudes:
+
+    - Ambos utilizan buses para la comunicación interna entre CPU, memoria y dispositivos de entrada/salida.
+    - Emplean tecnologías similares (por ejemplo, PCIe) aunque en diferentes configuraciones y capacidades.
+
+    Diferencias:
+
+    - Ancho de banda y velocidad: Los buses en servidores de alta gama suelen tener un mayor ancho de banda y velocidad para manejar cargas de trabajo más intensivas.
+    - Escalabilidad: Los servidores suelen tener buses más avanzados para soportar configuraciones multiprocesador y grandes cantidades de memoria y dispositivos de almacenamiento.
+    - Redundancia y fiabilidad: Los buses en servidores están diseñados para alta fiabilidad y tolerancia a fallos, a menudo con mecanismos de redundancia que no se encuentran en computadoras personales.
+
+- ¿Cuál es el papel del bus del sistema en la escalabilidad de un sistema informático y cómo puede afectar la capacidad de expansión y actualización de hardware en el futuro?
+
+    Escalabilidad:
+
+    - El bus del sistema es fundamental para la escalabilidad de un sistema informático. Su capacidad de manejar mayores velocidades y volúmenes de datos determina cuánto puede crecer un sistema en términos de rendimiento y capacidad.
+
+    Impacto en la capacidad de expansión y actualización de hardware:
+
+    - Modularidad: Los buses modernos, como PCIe, permiten la fácil adición de nuevos componentes, facilitando la expansión del hardware.
+    - Compatibilidad: La estandarización de buses asegura que nuevos dispositivos sean compatibles con sistemas existentes, permitiendo actualizaciones sin necesidad de cambiar toda la infraestructura.
+    - Rendimiento: La mejora continua en las tecnologías de buses (mayor velocidad y ancho de banda) permite que el hardware más reciente sea compatible con sistemas más antiguos, prolongando su vida útil y mejorando su rendimiento sin necesidad de reemplazar el sistema completo.

@@ -17,8 +17,15 @@
 #+select_tags: export
 #+exclude_tags: noexport
 #+creator: Emacs 27.1 (Org mode 9.3)
-
+ 
 * Corrección de Errores (E4, Q4)
 ** Hard Error vs Soft Error
 ** Código de Hamming
+- Un código corrector de errores se caracteriza por su capacidad para detectar y corregir fallas en las palabras de datos. Aunque mejora la fiabilidad de la memoria, introduce una mayor complejidad en el proceso.
+- El resultado de este código se llama "palabra de síndrome", la cual se busca que cumpla con las siguientes propiedades:
+- •	Si el síndrome contiene solo ceros, no se ha detectado error.
+- •	Si el síndrome tiene un solo bit puesto en 1, indica que se ha ocurrido un error en uno de los cuatro bits de comprobación, pero no es necesario corregirlo.
+- •	Si el síndrome tiene más de un bit puesto en 1, el valor numérico del síndrome nos dice exactamente cuál bit de la palabra de datos corresponde corregir el error. 
+** Imagen Hamming
+[[./imagenes/hamming.png]]
 - Realice una explicación sencilla con ejemplo

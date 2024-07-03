@@ -1,0 +1,50 @@
+% Created 2024-07-02 Tue 19:37
+% Intended LaTeX compiler: pdflatex
+\documentclass[presentation]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usetheme{default}
+\usecolortheme{}
+\usefonttheme{}
+\useinnertheme{}
+\useoutertheme{}
+\author{Enrique Perez, Anahi Lopez, Ismael Flores, Josue Zapata}
+\date{}
+\title{Corrección de Errores (E4, Q4)}
+
+\hypersetup{
+ pdfauthor={Enrique Perez, Anahi Lopez, Ismael Flores, Josue Zapata},
+ pdftitle={Corrección de Errores (E4, Q4)},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.1 (Org mode 9.3)}, 
+ pdflang={Spanish}}
+\begin{document}
+
+\maketitle
+\begin{frame}{Outline}
+\tableofcontents
+\end{frame}
+
+
+\section{Corrección de Errores (E4, Q4)}
+\label{sec:orgd24222b}
+\begin{frame}[label={sec:org9a880e7}]{Hard Error vs Soft Error}
+\end{frame}
+\begin{frame}[label={sec:org0069d02}]{Código de Hamming}
+\begin{itemize}
+\item Realice una explicación sencilla con ejemplo
+\end{itemize}
+\end{frame}
+\end{document}

@@ -1,6 +1,6 @@
-% Created 2024-07-02 Tue 19:37
+% Created 2024-07-02 Tue 19:41
 % Intended LaTeX compiler: pdflatex
-\documentclass[presentation]{beamer}
+\documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
@@ -15,14 +15,9 @@
 \usepackage{capt-of}
 \usepackage{hyperref}
 \usetheme{default}
-\usecolortheme{}
-\usefonttheme{}
-\useinnertheme{}
-\useoutertheme{}
 \author{Enrique Perez, Anahi Lopez, Ismael Flores, Josue Zapata}
-\date{}
+\date{\today <2024-07-2>}
 \title{Corrección de Errores (E4, Q4)}
-
 \hypersetup{
  pdfauthor={Enrique Perez, Anahi Lopez, Ismael Flores, Josue Zapata},
  pdftitle={Corrección de Errores (E4, Q4)},
@@ -38,13 +33,13 @@
 \end{frame}
 
 
-\section{Corrección de Errores (E4, Q4)}
-\label{sec:orgd24222b}
-\begin{frame}[label={sec:org9a880e7}]{Hard Error vs Soft Error}
-\end{frame}
-\begin{frame}[label={sec:org0069d02}]{Código de Hamming}
+\begin{frame}[label={sec:orgc40a9c9}]{Corrección de Errores (E4, Q4)}
+\begin{block}{Hard Error vs Soft Error}
+\end{block}
+\begin{block}{Código de Hamming}
 \begin{itemize}
 \item Realice una explicación sencilla con ejemplo
 \end{itemize}
+\end{block}
 \end{frame}
 \end{document}

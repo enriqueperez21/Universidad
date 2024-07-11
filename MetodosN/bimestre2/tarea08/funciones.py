@@ -87,9 +87,27 @@ def grado4(df):
     return solution
 
 def resolver_d(df):
+    x = (df['x'])
+    x_sum = sumatoria(x)
+    x2_sum = sumatoria(x**2)
+    y = (df['y'])
     Y_log = log_natural(df['y'])
-    d = {'y': Y_log, 'x': df['x']}
-    solucion = grado2(d)
-    b = list(solucion.items())
-    b = np.exp(b[1])
-    return solucion, b
+    Y_log_sum = sumatoria(Y_log)
+    XY_log_sum = sumatoria(x*Y_log)
+    # Número de puntos
+    n = len(df)
+
+    # Definimos las incógnitas
+    B_log, a = sp.symbols('B_log a')
+
+    # Definimos las dos ecuaciones basadas en la minimización de errores
+    eq1 = sp.Eq(n * B_log + a * x_sum, Y_log_sum)
+    eq2 = sp.Eq(B_log * x_sum + a * x2_sum, XY_log_sum)
+
+    # Resolvemos el sistema de ecuaciones
+    solution = sp.solve((eq1, eq2), (B_log, a))
+    a = list(solution.values())
+    b = float(a[0])
+    a = float(a[1])
+    b = np.exp(b)
+    return {'a': a,'b':b}

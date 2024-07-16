@@ -100,6 +100,31 @@ def resolver_d(x, y):
     def my_function(x): return (b*np.exp(a*x))
     return {'a': a,'b':b}, my_function
 
+def resolver_e(x, y):
+    x_sum = sumatoria(x)
+    Y_log = log_natural(y)
+    X_log = log_natural(x)
+    Y_log_sum, X_log_sum, XY_log_sum = sumatoria(Y_log), sumatoria(X_log), sumatoria(X_log*Y_log)
+    X2_log_sum = sumatoria(X_log**2)
+    # Número de puntos
+    n = len(x)
+
+    # Definimos las incógnitas
+    B_log, a = sp.symbols('B_log a')
+
+    # Definimos las dos ecuaciones basadas en la minimización de errores
+    eq1 = sp.Eq(n * B_log + a * X_log_sum, Y_log_sum)
+    eq2 = sp.Eq(B_log * X_log_sum + a * X2_log_sum, XY_log_sum)
+
+    # Resolvemos el sistema de ecuaciones
+    solution = sp.solve((eq1, eq2), (B_log, a))
+    a = list(solution.values())
+    b = float(a[0])
+    a = float(a[1])
+    b = np.exp(b)
+    def my_function(x): return (b*x**a)
+    return {'a': a,'b':b}, my_function
+
 def plot_points_line(x, y, x_graph, y_graph):
     fig, ax = plt.subplots(figsize=(6,4))
     ax.scatter(x, y, label='Datos originales')

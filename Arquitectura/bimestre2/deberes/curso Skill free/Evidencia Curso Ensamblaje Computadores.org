@@ -19,7 +19,6 @@
 #+creator: Emacs 27.1 (Org mode 9.3)
 
 * Conceptos Básicos de Hardware de Computadora
-* Introducción
 ** Capturas de pantalla 1
 Captura de pantalla 1
 [[./dashboard.png]]

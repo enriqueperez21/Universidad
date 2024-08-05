@@ -1,0 +1,198 @@
+% Created 2024-08-05 lun 00:28
+% Intended LaTeX compiler: pdflatex
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[top=25mm, left=25mm, right=25mm]{geometry}
+\usepackage{longtable}
+\fancyhead[R]{}
+\setlength\headheight{43.0pt}
+\usetheme{default}
+\author{COLOQUE SU NOMBRE}
+\date{2024-07-}
+\title{Booteo de Sistema Operativo Linux}
+\hypersetup{
+ pdfauthor={COLOQUE SU NOMBRE},
+ pdftitle={Booteo de Sistema Operativo Linux},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.1 (Org mode 9.7.5)}, 
+ pdflang={Español}}
+\begin{document}
+
+\maketitle
+\fancyhead[C]{\includegraphics[scale=0.05]\\
+ESCUELA POLITÉCNICA NACIONAL\\FACULTAD DE INGENIERÍA DE SISTEMAS\\
+ARQUITECTURA DE COMPUTADORES}
+\thispagestyle{fancy}
+
+
+
+
+\section{Objetivos}
+\label{sec:orga9b374f}
+
+\begin{itemize}
+\item Aprender a  bootear un sistema operativo Linux
+
+\item Aprender sobre la secuencia de arranque de un computador como la
+BIOS y la UEFI
+\end{itemize}
+
+\section{Instrucciones}
+\label{sec:org73d6425}
+\begin{enumerate}
+\item Siga el tutorial para la creación de un booteable de Ubuntu como se
+indica en la unidad 9 en el archivo Arranque Ubuntu\footnote{Dependiendo de las características de su computador debe
+verificar si al crear el medio booteable para Ubuntu, su sistema
+reconoce o acepta para el \emph{Target System}}.
+
+\item Realice un respaldo del código de \emph{BitLocker} utilizando un command
+prompt de Windows con permisos de administrador\footnote{Si no respalda el código, no podrá arrancar el disco luego de
+reiniciar. Más información en: \href{https://www.partitionwizard.com/disk-recovery/bitlocker-recovery-key-bypass.html }{https://www.partitionwizard.com/disk-recovery/bitlocker-recovery-key-bypass.html}}:
+
+\begin{verbatim}
+    manage-bde-protectors C:-get
+\end{verbatim}
+
+\item Utilizando su computador o el del laboratorio, siga los pasos
+indicados para obtener el booteo desde el USB con el Sistema
+Operativo de Ubuntu
+
+\item Realice el boot de Ubuntu desde la memoria USB externa y
+seleccione la opción de \emph{Probar Sistema Operativo}.
+\item Una vez ingresado active un terminal de Ubuntu: \texttt{Ctrl+ALT+T} y
+obtenga las características del computador mediante la ejecución de
+los comandos: \texttt{lscpu} \texttt{lsb\_release -a} \texttt{lspci}. Adjunte una captura
+de la ejecución o ejecute este archivo org instalando Emacs para
+capturar directamente la respuesta de la consola.
+\end{enumerate}
+
+
+\begin{verbatim}
+    lsb_release -a
+\end{verbatim}
+
+\begin{center}
+\begin{tabular}{ll}
+Distributor ID: & Ubuntu\\
+Description: & Ubuntu 22.04.4 LTS\\
+Release: & 22.04\\
+Codename: & jammy\\
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ll}
+Distributor ID: & Ubuntu\\
+Description: & Ubuntu 22.04.4 LTS\\
+Release: & 22.04\\
+Codename: & jammy\\
+\end{tabular}
+\end{center}
+
+\newpage
+
+\begin{verbatim}
+     lspci
+\end{verbatim}
+
+\begin{center}
+\begin{tabular}{rlllllllllllllrlr}
+00:00.0 & Host & bridge: & Intel & Corporation & Xeon & E3-1200 & v6/7th & Gen & Core & Processor & Host & Bridge/DRAM & Registers & (rev & 03) & \\
+00:02.0 & VGA & compatible & controller: & Intel & Corporation & Device & 5921 & (rev & 06) &  &  &  &  &  &  & \\
+00:04.0 & Signal & processing & controller: & Intel & Corporation & Xeon & E3-1200 & v5/E3-1500 & v5/6th & Gen & Core & Processor & Thermal & Subsystem & (rev & 03)\\
+00:14.0 & USB & controller: & Intel & Corporation & Sunrise & Point-LP & USB & 3.0 & xHCI & Controller & (rev & 21) &  &  &  & \\
+00:14.2 & Signal & processing & controller: & Intel & Corporation & Sunrise & Point-LP & Thermal & subsystem & (rev & 21) &  &  &  &  & \\
+00:15.0 & Signal & processing & controller: & Intel & Corporation & Sunrise & Point-LP & Serial & IO & I2C & Controller & \#0 & (rev & 21) &  & \\
+00:15.1 & Signal & processing & controller: & Intel & Corporation & Sunrise & Point-LP & Serial & IO & I2C & Controller & \#1 & (rev & 21) &  & \\
+00:16.0 & Communication & controller: & Intel & Corporation & Sunrise & Point-LP & CSME & HECI & \#1 & (rev & 21) &  &  &  &  & \\
+00:17.0 & SATA & controller: & Intel & Corporation & Sunrise & Point-LP & SATA & Controller & [AHCI & mode] & (rev & 21) &  &  &  & \\
+00:1c.0 & PCI & bridge: & Intel & Corporation & Sunrise & Point-LP & PCI & Express & Root & Port & \#5 & (rev & f1) &  &  & \\
+00:1c.5 & PCI & bridge: & Intel & Corporation & Sunrise & Point-LP & PCI & Express & Root & Port & \#6 & (rev & f1) &  &  & \\
+00:1f.0 & ISA & bridge: & Intel & Corporation & Sunrise & Point & LPC & Controller/eSPI & Controller & (rev & 21) &  &  &  &  & \\
+00:1f.2 & Memory & controller: & Intel & Corporation & Sunrise & Point-LP & PMC & (rev & 21) &  &  &  &  &  &  & \\
+00:1f.3 & Audio & device: & Intel & Corporation & Sunrise & Point-LP & HD & Audio & (rev & 21) &  &  &  &  &  & \\
+00:1f.4 & SMBus: & Intel & Corporation & Sunrise & Point-LP & SMBus & (rev & 21) &  &  &  &  &  &  &  & \\
+01:00.0 & Network & controller: & Qualcomm & Atheros & QCA9377 & 802.11ac & Wireless & Network & Adapter & (rev & 31) &  &  &  &  & \\
+02:00.0 & Ethernet & controller: & Realtek & Semiconductor & Co., & Ltd. & RTL810xE & PCI & Express & Fast & Ethernet & controller & (rev & 07) &  & \\
+\end{tabular}
+\end{center}
+
+\newpage
+
+\begin{verbatim}
+    lscpu
+\end{verbatim}
+
+\begin{center}
+\begin{tabular}{lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll}
+Arquitectura: & x86\textsubscript{64} &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+modo(s) & de & operación & de & las & CPUs: & 32-bit, & 64-bit &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Address & sizes: & 39 & bits & physical, & 48 & bits & virtual &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Orden & de & los & bytes: & Little & Endian &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+CPU(s): & 4 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Lista & de & la(s) & CPU(s) & en & línea: & 0-3 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+ID & de & fabricante: & GenuineIntel &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Nombre & del & modelo: & Intel(R) & Core(TM) & i3-7020U & CPU & @ & 2.30GHz &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Familia & de & CPU: & 6 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Modelo: & 142 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Hilo(s) & de & procesamiento & por & núcleo: & 2 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Núcleo(s) & por & «socket»: & 2 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+«Socket(s)» & 1 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Revisión: & 9 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+CPU & MHz & máx.: & 2300,0000 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+CPU & MHz & mín.: & 400,0000 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+BogoMIPS: & 4599.93 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Indicadores: & fpu & vme & de & pse & tsc & msr & pae & mce & cx8 & apic & sep & mtrr & pge & mca & cmov & pat & pse36 & clflush & dts & acpi & mmx & fxsr & sse & sse2 & ss & ht & tm & pbe & syscall & nx & pdpe1gb & rdtscp & lm & constant\textsubscript{tsc} & art & arch\textsubscript{perfmon} & pebs & bts & rep\textsubscript{good} & nopl & xtopology & nonstop\textsubscript{tsc} & cpuid & aperfmperf & pni & pclmulqdq & dtes64 & monitor & ds\textsubscript{cpl} & vmx & est & tm2 & ssse3 & sdbg & fma & cx16 & xtpr & pdcm & pcid & sse4\textsubscript{1} & sse4\textsubscript{2} & x2apic & movbe & popcnt & tsc\textsubscript{deadline}\textsubscript{timer} & aes & xsave & avx & f16c & rdrand & lahf\textsubscript{lm} & abm & 3dnowprefetch & cpuid\textsubscript{fault} & epb & invpcid\textsubscript{single} & pti & ssbd & ibrs & ibpb & stibp & tpr\textsubscript{shadow} & flexpriority & ept & vpid & ept\textsubscript{ad} & fsgsbase & tsc\textsubscript{adjust} & bmi1 & avx2 & smep & bmi2 & erms & invpcid & mpx & rdseed & adx & smap & clflushopt & intel\textsubscript{pt} & xsaveopt & xsavec & xgetbv1 & xsaves & dtherm & arat & pln & pts & hwp & hwp\textsubscript{notify} & hwp\textsubscript{act}\textsubscript{window} & hwp\textsubscript{epp} & vnmi & md\textsubscript{clear} & flush\textsubscript{l1d} & arch\textsubscript{capabilities}\\
+Virtualización: & VT-x &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Caché & L1d: & 64 & KiB & (2 & instances) &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Caché & L1i: & 64 & KiB & (2 & instances) &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Caché & L2: & 512 & KiB & (2 & instances) &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Caché & L3: & 3 & MiB & (1 & instance) &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Modo(s) & NUMA: & 1 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+CPU(s) & del & nodo & NUMA & 0: & 0-3 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Vulnerability & Gather & data & sampling: & Mitigation; & Microcode &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Vulnerability & Itlb & multihit: & KVM: & Mitigation: & VMX & disabled &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Vulnerability & L1tf: & Mitigation; & PTE & Inversion; & VMX & conditional & cache & flushes, & SMT & vulnerable &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Vulnerability & Mds: & Mitigation; & Clear & CPU & buffers; & SMT & vulnerable &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Vulnerability & Meltdown: & Mitigation; & PTI &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Vulnerability & Mmio & stale & data: & Mitigation; & Clear & CPU & buffers; & SMT & vulnerable &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Vulnerability & Retbleed: & Mitigation; & IBRS &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Vulnerability & Spec & rstack & overflow: & Not & affected &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Vulnerability & Spec & store & bypass: & Mitigation; & Speculative & Store & Bypass & disabled & via & prctl &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Vulnerability & Spectre & v1: & Mitigation; & usercopy/swapgs & barriers & and & \_\textsubscript{user} & pointer & sanitization &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Vulnerability & Spectre & v2: & Mitigation; & IBRS; & IBPB & conditional; & STIBP & conditional; & RSB & filling; & PBRSB-eIBRS & Not & affected; & BHI & Not & affected &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Vulnerability & Srbds: & Mitigation; & Microcode &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+Vulnerability & Tsx & async & abort: & Not & affected &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \\
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+\item Describa que hacen y para qué sirven los comandos utilizados en la práctica
+\end{enumerate}
+
+\section{Comandos Utilizados}
+\label{sec:org24213da}
+\subsection{lscpu}
+\label{sec:org491c2e6}
+Respuesta: Muestra datos del cpu como versión, generación, fabricante, etc
+\subsection{lsb$\backslash$\textsubscript{release} -a}
+\label{sec:org644f821}
+Muestra la versión de linux del equipo
+\subsection{lspci}
+\label{sec:org779b091}
+Respuesta: Muestra algunos datos de los controladores del equipo 
+\end{document}

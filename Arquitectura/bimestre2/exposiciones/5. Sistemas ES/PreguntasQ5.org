@@ -1,0 +1,86 @@
+#+options: H:2
+#+latex_class: beamer
+#+columns: %45ITEM %10BEAMER_env(Env) %10BEAMER_act(Act) %4BEAMER_col(Col) %8BEAMER_opt(Opt)
+#+beamer_theme: default
+#+beamer_color_theme:
+#+beamer_font_theme:
+#+beamer_inner_theme:
+#+beamer_outer_theme:
+#+beamer_header:
+
+
+#+title: Preguntas E/S Programada
+#+date: <2024-07-2>
+#+author: Enrique Perez S
+#+email: luis.perez05@epn.edu.ec
+#+language: es
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 27.1 (Org mode 9.3)
+
+* Preguntas E/S Programada
+** Pregunta 1
+¿Qué es la E/S programada y cómo se diferencia de otros métodos de E/S?
+
+
+Es un método de transferencia de datos entre el CPU y un dispositivo de E/S donde el CPU controla directamente las operaciones de E/S. Se diferencia de otros métodos como la E/S por interrupciones, donde el dispositivo notifica al CPU cuando está listo para transferir datos, y la E/S por acceso directo a memoria (DMA), donde un controlador especial maneja las transferencias de datos sin intervención constante del CPU.
+
+** Pregunta 2
+¿Cuáles son las principales desventajas de la E/S programada en comparación con otros métodos de E/S?
+
+
+Es algo ineficiente ya que el CPU debe esperar activamente (polling) hasta que el dispositivo de E/S esté listo para transferir datos, lo cual consume tiempo de CPU que podría ser utilizado para otras tareas. Además, puede llevar a una mayor latencia en la respuesta de las operaciones de E/S.
+
+** Pregunta 3
+
+Describe el proceso de E/S programada paso a paso. ¿Qué roles juegan el CPU y los dispositivos de E/S en este proceso?
+
+
+El CPU envía una instrucción al dispositivo de E/S para iniciar una operación.
+El CPU consulta periódicamente el estado del dispositivo de E/S para verificar si está listo para transferir datos.
+Una vez que el dispositivo está listo, el CPU transfiere los datos entre la memoria y el dispositivo.
+El CPU repite este proceso hasta que la operación de E/S está completa.
+El dispositivo de E/S se encarga de recibir o enviar datos según la instrucción del CPU, pero no puede notificar al CPU cuando está listo sin que el CPU lo consulte activamente.
+
+** Pregunta 4
+¿Qué es un controlador de E/S y cuál es su función en la E/S programada?
+
+
+E un hardware o dispositivo de software que gestiona las comunicaciones entre el CPU y los dispositivos de E/S. En la E/S programada, el controlador de E/S facilita la transferencia de datos y el control de las operaciones de E/S, proporcionando registros de estado y control que el CPU utiliza para iniciar y monitorizar las operaciones.
+
+** Pregunta 5
+¿Cómo se gestionan los registros de estado y control en la E/S programada?
+
+
+Los registros de estado y control son utilizados por el CPU para iniciar y monitorear las operaciones de E/S. El CPU escribe en los registros de control para indicar al dispositivo de E/S qué operación realizar y consulta los registros de estado para determinar si el dispositivo está listo para transferir datos.
+
+** Pregunta 6
+¿Qué papel juega la sincronización en la E/S programada y cómo se asegura esta sincronización?
+
+
+La sincronización es crucial en la E/S programada para asegurar que el CPU y el dispositivo de E/S estén listos para la transferencia de datos al mismo tiempo. Esta sincronización se asegura mediante el polling, donde el CPU verifica constantemente el estado del dispositivo de E/S para determinar cuándo puede transferir datos.
+
+** Pregunta 7
+Explique el concepto de polling en el contexto de E/S programada. ¿Cuáles son sus ventajas y desventajas?
+
+Polling es el proceso por el cual el CPU consulta periódicamente el estado de un dispositivo de E/S para verificar si está listo para transferir datos. La ventaja del polling es su simplicidad y control directo del CPU sobre las operaciones de E/S. La desventaja es que consume tiempo de CPU, ya que este debe esperar activamente la disponibilidad del dispositivo de E/S, reduciendo la eficiencia general del sistema.
+
+** Pregunta 8
+¿Cómo afecta la E/S programada el rendimiento general de un sistema informático?
+
+
+Puede degradar el rendimiento del sistema porque el CPU debe dedicar tiempo a verificar continuamente el estado del dispositivo de E/S en lugar de realizar otras tareas. Esto puede llevar a una baja utilización del CPU y una mayor latencia en las operaciones de E/S.
+
+** Pregunta 9
+Describe un escenario práctico donde la E/S programada sería preferible sobre otros métodos de E/S.
+
+
+Puede ser preferible en sistemas simples o embebidos donde el control directo y la simplicidad son más importantes que la eficiencia. Por ejemplo, en dispositivos donde las operaciones de E/S son poco frecuentes o donde el costo y la complejidad del hardware adicional para manejar interrupciones o DMA no están justificados.
+
+** Pregunta 10
+¿Qué técnicas se pueden emplear para mejorar la eficiencia de la E/S programada en un sistema?
+
+
+Optimización del código de polling para reducir la frecuencia de verificación del estado del dispositivo.
+Uso de temporizadores para espaciar las consultas del estado del dispositivo.
+Implementación de buffers para manejar ráfagas de datos, permitiendo al CPU procesar datos en bloques en lugar de realizar transferencias individuales.

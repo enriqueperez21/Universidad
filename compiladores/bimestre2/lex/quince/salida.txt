@@ -1,0 +1,11 @@
+Un entero: 25 (25)
+Un real: 33.55 (33.55)
+Una palabra clave: if
+Una palabra clave: then
+Un identificador: epn2020
+Un entero: 23 (23)
+Un operador: *
+Un entero: 10 (10)
+Un operador: /
+Un operador: *
+Carácter no reconocido: @

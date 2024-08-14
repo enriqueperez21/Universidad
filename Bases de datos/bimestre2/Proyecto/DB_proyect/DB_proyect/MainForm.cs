@@ -342,11 +342,11 @@ namespace DB_proyect
 
         private void button_update_reservas_Click(object sender, EventArgs e)
         {
-            string id_reserva   = update_reservas_id.Text;
-            string dni_client   = update_reservas_new_dni_client.Text;
-            string begin_date   = update_reservas_new_begin_date.Text;
-            string final_date   = update_reservas_new_end_date.Text;
-            string cost         = update_reservas_new_cost.Text;
+            string id_reserva = update_reservas_id.Text;
+            string dni_client = update_reservas_new_dni_client.Text;
+            string begin_date = update_reservas_new_begin_date.Text;
+            string final_date = update_reservas_new_end_date.Text;
+            string cost = update_reservas_new_cost.Text;
             string agencia_name = update_reservas_new_agencia_name.Text;
 
             string query = $@"
@@ -367,6 +367,15 @@ namespace DB_proyect
             update_reservas_new_end_date.Text = "";
             update_reservas_new_cost.Text = "";
             update_reservas_new_agencia_name.Text = "";
+        }
+
+        private void button_delete_coche_Click_1(object sender, EventArgs e)
+        {
+            string matricula_coche = delete_coche_matricula.Text;
+
+            string query = $"DELETE FROM coches WHERE matricula = '{matricula_coche}';";
+            delete_query(query, "Registro del Coche");
+            delete_coche_matricula.Text = "";
         }
     }
 }

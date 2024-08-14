@@ -75,6 +75,7 @@
             update_car_new_garage = new TextBox();
             label54 = new Label();
             tabUpdateReservas = new TabPage();
+            label68 = new Label();
             label64 = new Label();
             label63 = new Label();
             update_reservas_id = new TextBox();
@@ -128,6 +129,7 @@
             insert_coches_garaje = new TextBox();
             label21 = new Label();
             tabPage8 = new TabPage();
+            label69 = new Label();
             label66 = new Label();
             label65 = new Label();
             insert_reserva_agencia_name = new TextBox();
@@ -173,8 +175,6 @@
             label39 = new Label();
             delete_reserva_begin_date = new TextBox();
             label40 = new Label();
-            label68 = new Label();
-            label69 = new Label();
             sub_windows.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -667,12 +667,21 @@
             tabUpdateReservas.Controls.Add(label60);
             tabUpdateReservas.Controls.Add(update_reservas_new_begin_date);
             tabUpdateReservas.Controls.Add(label61);
-            tabUpdateReservas.Location = new Point(4, 37);
+            tabUpdateReservas.Location = new Point(4, 29);
             tabUpdateReservas.Name = "tabUpdateReservas";
-            tabUpdateReservas.Size = new Size(1134, 459);
+            tabUpdateReservas.Size = new Size(1134, 467);
             tabUpdateReservas.TabIndex = 3;
             tabUpdateReservas.Text = "Reservas";
             tabUpdateReservas.UseVisualStyleBackColor = true;
+            // 
+            // label68
+            // 
+            label68.AutoSize = true;
+            label68.Location = new Point(508, 269);
+            label68.Name = "label68";
+            label68.Size = new Size(23, 28);
+            label68.TabIndex = 68;
+            label68.Text = "$";
             // 
             // label64
             // 
@@ -1165,12 +1174,21 @@
             tabPage8.Controls.Add(label35);
             tabPage8.Controls.Add(insert_reserva_begin_date);
             tabPage8.Controls.Add(label36);
-            tabPage8.Location = new Point(4, 37);
+            tabPage8.Location = new Point(4, 29);
             tabPage8.Name = "tabPage8";
-            tabPage8.Size = new Size(1134, 420);
+            tabPage8.Size = new Size(1134, 428);
             tabPage8.TabIndex = 3;
             tabPage8.Text = "Reservas";
             tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // label69
+            // 
+            label69.AutoSize = true;
+            label69.Location = new Point(476, 222);
+            label69.Name = "label69";
+            label69.Size = new Size(23, 28);
+            label69.TabIndex = 69;
+            label69.Text = "$";
             // 
             // label66
             // 
@@ -1452,9 +1470,9 @@
             tabPage11.Controls.Add(label12);
             tabPage11.Controls.Add(delete_coche_matricula);
             tabPage11.Controls.Add(label13);
-            tabPage11.Location = new Point(4, 29);
+            tabPage11.Location = new Point(4, 37);
             tabPage11.Name = "tabPage11";
-            tabPage11.Size = new Size(1134, 447);
+            tabPage11.Size = new Size(1134, 439);
             tabPage11.TabIndex = 2;
             tabPage11.Text = "Coches";
             tabPage11.UseVisualStyleBackColor = true;
@@ -1467,6 +1485,7 @@
             button_delete_coche.TabIndex = 19;
             button_delete_coche.Text = "Eliminar coche";
             button_delete_coche.UseVisualStyleBackColor = true;
+            button_delete_coche.Click += button_delete_coche_Click_1;
             // 
             // label12
             // 
@@ -1586,24 +1605,6 @@
             label40.Size = new Size(114, 28);
             label40.TabIndex = 52;
             label40.Text = "Fecha inicio";
-            // 
-            // label68
-            // 
-            label68.AutoSize = true;
-            label68.Location = new Point(508, 269);
-            label68.Name = "label68";
-            label68.Size = new Size(23, 28);
-            label68.TabIndex = 68;
-            label68.Text = "$";
-            // 
-            // label69
-            // 
-            label69.AutoSize = true;
-            label69.Location = new Point(476, 222);
-            label69.Name = "label69";
-            label69.Size = new Size(23, 28);
-            label69.TabIndex = 69;
-            label69.Text = "$";
             // 
             // MainForm
             // 

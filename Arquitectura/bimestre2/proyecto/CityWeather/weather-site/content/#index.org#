@@ -1,0 +1,399 @@
+#+options: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+options: author:t broken-links:nil c:nil creator:nil
+#+options: d:(not "LOGBOOK") date:t e:t email:nil expand-links:t f:t
+#+options: inline:t num:t p:nil pri:nil prop:nil stat:t tags:t
+#+options: tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+title: Proyecto ICCD332 Arquitectura de Computadores
+#+date: 2024-08-14
+#+author: Estudiante: Luis Enrique Pérez Señalin
+#+email: luis.perez05@epn.edu.ec
+#+language: es
+#+select_tags: export
+#+exclude_tags: noexport
+#+creator: Emacs 27.1 (Org mode 9.7.5)
+#+cite_export:
+* City Weather APP
+Este es el proyecto de fin de semestre en donde se pretende demostrar
+las destrezas obtenidas durante el transcurso de la asignatura de
+**Arquitectura de Computadores**.
+
+1. Conocimientos de sistema operativo Linux
+2. Conocimientos de Emacs/Jupyter
+3. Configuración de Entorno para Data Science con Mamba/Anaconda
+4. Literate Programming
+ 
+** Estructura del proyecto
+Se recomienda que el proyecto se cree en el /home/ del sistema
+operativo i.e. /home/<user>/. Allí se creará la carpeta /CityWeather/
+#+begin_src shell :results output :exports both
+#cd ..
+#cd ..
+#
+pwd
+#+end_src
+
+#+RESULTS:
+: /home/kikeykarina/Documents/Universidad/Arquitectura/bimestre2/proyecto/CityWeather/weather-site/content
+
+El proyecto ha de tener los siguientes archivos y
+subdirectorios. Adaptar los nombres de los archivos según las ciudades
+específicas del grupo.
+
+#+begin_src shell :results output :exports results
+cd ..
+cd ..
+tree
+#+end_src
+
+#+RESULTS:
+#+begin_example
+.
+├── CityTemperatureAnalysis.ipynb
+├── clima-quito-hoy.csv
+├── get-weather.sh
+├── main.py
+├── output.log
+├── test.py
+└── weather-site
+    ├── build.sh
+    ├── build-site.el
+    ├── content
+    │   ├── #index.org#
+    │   ├── index.org
+    │   └── index.org~
+    └── public
+        ├── images
+        │   ├── humidity.png
+        │   └── temperature.png
+        └── index.html
+
+4 directories, 14 files
+#+end_example
+
+Puede usar Emacs para la creación de la estructura de su proyecto
+usando comandos desde el bloque de shell. Recuerde ejecutar el bloque
+con ~C-c C-c~. Para insertar un bloque nuevo utilice ~C-c C-,~ o ~M-x
+org-insert-structure-template~. Seleccione la opción /s/ para src y
+adapte el bloque según su código tenga un comandos de shell, código de
+Python o de Java. En este documento ~.org~ dispone de varios ejemplos
+funcionales para escribir y presentar el código.
+
+#+begin_src shell :results output :exports both
+#cd ..                                                                                                                                           
+#cd ..                                                                                                                                           
+#mkdir CityWeather                                                                                                                               
+#cd Cityweather                                                                                                                                  
+#touch main.py                                                                                                                                   
+#touch get-weather.sh                                                                                                                            
+#touch Citytemperatureanalysis.ipynb                                                                                                             
+#mkdir weather-site                                                                                                                              
+#cd weather-site                                                                                                                                 
+#mkdir content                                                                                                                                   
+#mkdir public 
+#+end_src
+
+#+RESULTS:
+: Aquí va sus comandos
+
+** Formulación del Problema
+Se desea realizar un registro climatológico de una ciudad
+$\mathcal{C}$. Para esto, escriba un script de Python/Java que permita
+obtener datos climatológicos desde el API de [[https://openweathermap.org/current#one][openweathermap]]. El API
+hace uso de los valores de latitud $x$ y longitud $y$ de la ciudad
+$\mathcal{C}$ para devolver los valores actuales a un tiempo $t$.
+
+Los resultados obtenidos de la consulta al API se escriben en un
+archivo /clima-<ciudad>-hoy.csv/. Cada ejecución del script debe
+almacenar nuevos datos en el archivo. Utilice *crontab* y sus
+conocimientos de Linux y Programación para obtener datos del API de
+/openweathermap/ con una periodicidad de 15 minutos mediante la
+ejecución de un archivo ejecutable denominado
+/get-weather.sh/. Obtenga al menos 50 datos. Verifique los
+resultados. Todas las operaciones se realizan en Linux o en el
+WSL. Las etapas del problema se subdividen en:
+
+    1. Conformar los grupos de 2 estudiantes y definir la ciudad
+       objeto de estudio.
+    2.  Crear su API gratuito en [[https://openweathermap.org/current#one][openweathermap]]
+    3. Escribir un script en Python/Java que realice la consulta al
+       API y escriba los resultados en /clima-<ciudad>-hoy.csv/. El
+       archivo ha de contener toda la información que se obtiene del
+       API en columnas. Se debe observar que los datos sobre lluvia
+       (rain) y nieve (snow) se dan a veces si existe el fenómeno.
+    3. Desarrollar un ejecutable /get-weather.sh/ para ejecutar el
+       programa Python/Java.[fn:1]
+       #+begin_src shell :exports both
+         python3 main.py
+       #+end_src
+
+    4. Configurar Crontab para la adquisición de datos. Escriba el
+       comando configurado. Respalde la ejecución de crontab en un
+       archivo output.log
+    5. Realizar la presentación del Trabajo utilizando la generación
+       del sitio web por medio de Emacs. Para esto es necesario crear
+       la carpeta **weather-site** dentro del proyecto. Puede ajustar el
+       /look and feel/ según sus preferencias. El servidor a usar es
+       el **simple-httpd** integrado en Emacs que debe ser instalado:
+       - Usando comandos Emacs: ~M-x package-install~ presionamos
+         enter (i.e. RET) y escribimos el nombre del paquete:
+         simple-httpd
+       - Configurando el archivo init.el
+
+       #+begin_src elisp
+         (use-package simple-httpd
+            :ensure t)
+       #+end_src
+
+       Instrucciones de sobre la creación del sitio web se tiene en el
+       vídeo de instrucciones y en el archivo [[https://github.com/LeninGF/EPN-Lectures/blob/main/iccd332ArqComp-2024-A/Tutoriales/Org-Website/Org-Website.org][Org-Website.org]] en el
+       GitHub del curso
+
+    6. Su código debe estar respaldado en GitHub/BitBucket, la
+       dirección será remitida en la contestación de la tarea
+** Descripción del código
+En esta sección se debe detallar segmentos importantes del código
+desarrollado así como la **estrategia de solución** adoptada por el
+grupo para resolver el problema. Divida su código en unidades
+funcionales para facilitar su presentación y exposición.
+
+Lectura del API
+#+begin_src python :session :results output exports both
+url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={api}"
+response = requests.get(url)
+data = response.json()
+return(data)
+#+end_src
+
+#+RESULTS:
+
+Convertir /Json/ a /Diccionario/ de Python
+#+begin_src python :session :results output exports both
+def process(json):
+    sunrise = json.get("sys", {}).get("sunrise")
+    sunset = json.get("sys", {}).get("sunset")
+
+    normalized_dict = {
+        "date": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "city": json.get("name"),
+        "latitude": json.get("coord", {}).get("lat"),
+        "longitude": json.get("coord", {}).get("lon"),
+        "temperature": json.get("main", {}).get("temp"),
+        "feels_like": json.get("main", {}).get("feels_like"),
+        "temp_min": json.get("main", {}).get("temp_min"),
+        "temp_max": json.get("main", {}).get("temp_max"),
+        "pressure": json.get("main", {}).get("pressure"),
+        "humidity": json.get("main", {}).get("humidity"),
+        "sea_level_pressure": json.get("main", {}).get("sea_level"),
+        "ground_level_pressure": json.get("main", {}).get("grnd_level"),
+        "weather_main": json.get("weather", [{}])[0].get("main"),
+        "weather_description": json.get("weather", [{}])[0].get("description"),
+        "weather_icon": json.get("weather", [{}])[0].get("icon"),
+        "visibility": json.get("visibility"),
+        "wind_speed": json.get("wind", {}).get("speed"),
+        "wind_deg": json.get("wind", {}).get("deg"),
+        "wind_gust": json.get("wind", {}).get("gust"),
+        "cloudiness": json.get("clouds", {}).get("all"),
+        "sunrise": datetime.utcfromtimestamp(sunrise).strftime('%Y-%m-%d %H:%M:%S') if sunrise else None,
+        "sunset": datetime.utcfromtimestamp(sunset).strftime('%Y-%m-%d %H:%M:%S') if sunset else None,
+        "timezone": json.get("timezone"),
+        "country": json.get("sys", {}).get("country"),
+    }
+    return normalized_dict
+#+end_src
+
+#+RESULTS:
+
+Guardar el archivo csv
+#+begin_src python :session :results output exports both
+def write2csv(json_response, csv_filename):
+    file_exists = os.path.isfile(csv_filename)
+    
+    with open(csv_filename, mode='a', newline='') as file:
+        writer = csv.DictWriter(file, fieldnames=json_response.keys())
+        
+        if not file_exists:
+            writer.writeheader()
+        
+        writer.writerow(json_response)
+#+end_src
+
+#+RESULTS:
+
+** Script ejecutable sh
+Se coloca el contenido del script ejecutable. Recuerde que se debe
+utilizar el entorno de **anaconda/mamba** denominado **iccd332** para
+la ejecución de Python; independientemente de que tenga una
+instalación nativa de Python
+
+En el caso de los shell script se puede usar `which sh` para conocer
+la ubicación del ejecutable
+#+begin_src shell :results output :exports both
+which sh
+#+end_src
+
+#+RESULTS:
+: /usr/bin/sh
+
+De igual manera se requiere localizar el entorno de mamba *iccd332*
+que será utilizado
+
+Como trabajo en nativo, se utiliza python3 en vez de mamba
+
+#+begin_src shell :results output :exports both
+which python3
+#+end_src
+
+#+RESULTS:
+: /usr/bin/python3
+
+Con esto el archivo ejecutable a de tener (adapte el código según las
+condiciones de su máquina):
+
+#+begin_src shell :results output :exports both
+cd ..
+cd ..
+python3 main.py
+#+end_src
+
+#+RESULTS:
+: ===== Bienvenido a Quito-Clima =====
+
+Finalmente convierta en ejecutable como se explicó en clases y laboratorio
+#+begin_src shell :results output :exports both
+#!/usr/bin/sh
+python3 main.py
+#+end_src
+
+** Configuración de Crontab
+Se indica la configuración realizada en crontab para la adquisición de datos
+
+#+begin_src shell
+*/15 * * * * cd /home/kikeykarina/Documents/Universidad/Arquitectura/bimestre2/proyecto/CityWeather && ./get-weather.sh >> output.log 2>&1
+#+end_src
+
+#+RESULTS:
+
+- Recuerde remplazar <City> por el nombre de la ciudad que analice
+- Recuerde ajustar el tiempo para potenciar tomar datos nuevos
+- Recuerde que ~2>&1~ permite guardar en ~output.log~ tanto la salida
+  del programa como los errores en la ejecución.
+* Presentación de resultados
+Para la pressentación de resultados se utilizan las librerías de Python:
+- matplotlib
+- pandas
+
+Alternativamente como pudo estudiar en el Jupyter Notebook
+[[https://github.com/LeninGF/EPN-Lectures/blob/main/iccd332ArqComp-2024-A/Proyectos/CityWeather/CityTemperatureAnalysis.ipynb][CityTemperatureAnalysis.ipynb]], existen librerías alternativas que se
+pueden utilizar para presentar los resultados gráficos. En ambos
+casos, para que funcione los siguientes bloques de código, es
+necesario que realice la instalación de los paquetes usando ~mamba
+install <nombre-paquete>~
+** Muestra Aleatoria de datos
+Presentar una muestra de 10 valores aleatorios de los datos obtenidos.
+#+caption: Lectura de archivo csv
+#+begin_src python :session :results output exports both
+import os
+import pandas as pd
+# lectura del archivo csv obtenido
+df = pd.read_csv('/home/kikeykarina/Documents/Universidad/Arquitectura/bimestre2/proyecto/CityWeather/clima-quito-hoy.csv')
+# se imprime la estructura del dataframe en forma de filas x columnas
+print(df.shape)
+#+end_src
+
+#+RESULTS:
+: (51, 24)
+
+
+#+caption: Despliegue de datos aleatorios
+#+begin_src python :session :exports both :results value table :return table
+table1 = df.sample(10)
+table = [list(table1)]+[None]+table1.values.tolist()
+table
+#+end_src
+
+#+RESULTS:
+| date                | city  | latitude | longitude | temperature | feels_like | temp_min | temp_max | pressure | humidity | sea_level_pressure | ground_level_pressure | weather_main | weather_description | weather_icon | visibility | wind_speed | wind_deg | wind_gust | cloudiness | sunrise             | sunset              | timezone | country |
+|---------------------+-------+----------+-----------+-------------+------------+----------+----------+----------+----------+--------------------+-----------------------+--------------+---------------------+--------------+------------+------------+----------+-----------+------------+---------------------+---------------------+----------+---------|
+| 2024-08-14 05:15:02 | Quito |  -0.2299 |  -78.5249 |      281.21 |     280.68 |   281.21 |   281.21 |     1018 |       66 |               1018 |                   722 | Clouds       | overcast clouds     | 04n          |      10000 |       1.42 |      135 |      1.56 |         99 | 2024-08-14 11:15:36 | 2024-08-14 23:21:59 |   -18000 | EC      |
+| 2024-08-13 20:30:02 | Quito |  -0.2299 |  -78.5249 |      285.47 |     284.45 |   285.47 |   285.47 |     1016 |       65 |               1016 |                   724 | Clouds       | overcast clouds     | 04n          |      10000 |       1.64 |       87 |      2.48 |         89 | 2024-08-13 11:15:47 | 2024-08-13 23:22:10 |   -18000 | EC      |
+| 2024-08-14 08:30:04 | Quito |  -0.2299 |   -78.525 |      285.17 |     283.81 |   285.17 |   285.17 |     1018 |       53 |               1018 |                   725 | Clouds       | overcast clouds     | 04d          |      10000 |       1.34 |      102 |      1.94 |        100 | 2024-08-14 11:15:36 | 2024-08-14 23:21:59 |   -18000 | EC      |
+| 2024-08-13 21:45:02 | Quito |  -0.2299 |  -78.5249 |      283.75 |     282.64 |   283.75 |   283.75 |     1019 |       68 |               1019 |                   724 | Clouds       | overcast clouds     | 04n          |      10000 |       1.73 |      116 |      2.19 |         95 | 2024-08-13 11:15:47 | 2024-08-13 23:22:10 |   -18000 | EC      |
+| 2024-08-13 23:45:02 | Quito |  -0.2299 |  -78.5249 |      282.69 |      282.1 |   282.69 |   282.69 |     1019 |       69 |               1019 |                   724 | Clouds       | overcast clouds     | 04n          |      10000 |       1.67 |      131 |      1.97 |         95 | 2024-08-13 11:15:47 | 2024-08-13 23:22:10 |   -18000 | EC      |
+| 2024-08-13 23:15:02 | Quito |  -0.2333 |  -78.5167 |      284.35 |      283.3 |   284.35 |   284.35 |     1019 |       68 |               1019 |                   738 | Clouds       | overcast clouds     | 04n          |      10000 |       1.62 |      124 |      1.96 |         95 | 2024-08-13 11:15:45 | 2024-08-13 23:22:08 |   -18000 | EC      |
+| 2024-08-13 22:00:02 | Quito |  -0.2299 |  -78.5249 |      283.75 |     282.64 |   283.75 |   283.75 |     1019 |       68 |               1019 |                   724 | Clouds       | overcast clouds     | 04n          |      10000 |       1.73 |      116 |      2.19 |         95 | 2024-08-13 11:15:47 | 2024-08-13 23:22:10 |   -18000 | EC      |
+| 2024-08-14 03:15:02 | Quito |  -0.2299 |  -78.5249 |      281.56 |     280.99 |   281.56 |   281.56 |     1018 |       68 |               1018 |                   722 | Clouds       | overcast clouds     | 04n          |      10000 |        1.5 |      141 |       1.8 |         97 | 2024-08-14 11:15:36 | 2024-08-14 23:21:59 |   -18000 | EC      |
+| 2024-08-14 00:45:02 | Quito |  -0.2299 |  -78.5249 |      282.26 |      281.7 |   282.26 |   282.26 |     1019 |       69 |               1019 |                   723 | Clouds       | overcast clouds     | 04n          |      10000 |       1.58 |      130 |      1.87 |         96 | 2024-08-14 11:15:36 | 2024-08-14 23:21:59 |   -18000 | EC      |
+| 2024-08-14 06:30:03 | Quito |  -0.2299 |  -78.5249 |      280.98 |     280.16 |   280.98 |   280.98 |     1019 |       65 |               1019 |                   722 | Clouds       | overcast clouds     | 04d          |      10000 |       1.65 |      130 |      1.58 |         95 | 2024-08-14 11:15:36 | 2024-08-14 23:21:59 |   -18000 | EC      |
+
+** Gráfica Temperatura vs Tiempo
+Realizar una gráfica de la Temperatura en el tiempo.
+
+
+El siguiente cógido permite hacer la gráfica de la temperatura vs
+tiempo para Org 9.7+. Para saber que versión dispone puede ejecutar
+~M-x org-version~
+
+#+begin_src python :results file :exports both :session
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+# Define el tamaño de la figura de salida
+fig = plt.figure(figsize=(8,6))
+plt.plot(df['date'], df['temperature']) # dibuja las variables dt y temperatura
+# ajuste para presentacion de fechas en la imagen 
+plt.gca().xaxis.set_major_locator(mdates.DayLocator(interval=2))
+# plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))  
+plt.grid()
+# Titulo que obtiene el nombre de la ciudad del DataFrame
+plt.title(f'Main Temp vs Time in {next(iter(set(df.name)))}')
+plt.xticks(rotation=40) # rotación de las etiquetas 40°
+fig.tight_layout()
+fname = '../public/images/temperature.png'
+plt.savefig(fname)
+fname
+#+end_src
+
+#+RESULTS:
+[[file:../public/images/temperature.png]]
+
+#+caption: Gráfica Temperatura vs Tiempo
+#+RESULTS:
+
+**  Realice una gráfica de Humedad con respecto al tiempo
+#+begin_src python :results file :exports both :session
+import matplotlib.pyplot as plt                                                                                                                  
+import matplotlib.dates as mdates               
+
+df = pd.read_csv('/home/kikeykarina/Documents/Universidad/Arquitectura/bimestre2/proyecto/CityWeather/clima-quito-hoy.csv')
+# Define el tamaño de la figura de salida                                                                                                        
+fig = plt.figure(figsize=(8,6))                                                                                                                  
+plt.plot(df['date'], df['humidity']) # dibuja las variables dt y temperatura                                                                      
+# ajuste para presentacion de fechas en la imagen                                                                                                
+plt.gca().xaxis.set_major_locator(mdates.DayLocator(interval=2))                                                                                 
+# plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))                                                                          
+plt.grid()                                                                                                                                       
+# Titulo que obtiene el nombre de la ciudad del DataFrame
+plt.title(f'Main Temp vs Time in {next(iter(set(df.name)))}')                                                                                    
+plt.xticks(rotation=40) # rotación de las etiquetas 40°                                                                                          
+fig.tight_layout()                                                                                                                               
+fname = '../public/images/humidity.png'                                                                                                       
+plt.savefig(fname)
+
+fname
+#+end_src
+
+#+RESULTS:
+[[file:../public/images/humidity.png]]
+
+
+**  *Opcional* Presente alguna gráfica de interés.
+
+* Referencias
+- [[https://emacs.stackexchange.com/questions/28715/get-pandas-data-frame-as-a-table-in-org-babel][presentar dataframe como tabla en emacs org]]
+- [[https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-python.html][Python Source Code Blocks in Org Mode]]
+- [[https://systemcrafters.net/publishing-websites-with-org-mode/building-the-site/][Systems Crafters Construir tu sitio web con Modo Emacs Org]]
+- [[https://www.youtube.com/watch?v=AfkrzFodoNw][Vídeo Youtube Build Your Website with Org Mode]]
+* Footnotes
+
+[fn:1] Recuerde que su máquina ha de disponer de un entorno de
+anaconda/mamba denominado iccd332 en el cual se dispone del interprete
+de Python

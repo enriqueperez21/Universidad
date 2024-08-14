@@ -220,3 +220,5 @@ Traceback (most recent call last):
   File "/home/kikeykarina/.local/lib/python3.10/site-packages/requests/adapters.py", line 519, in send
     raise ConnectionError(e, request=request)
 requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.openweathermap.org', port=443): Max retries exceeded with url: /data/2.5/weather?lat=-0.2299&lon=-78.5249&appid=2d0126e794e76199a4aecf1ac87d4f78 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fdaf37c21d0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+===== Bienvenido a Quito-Clima =====
+===== Bienvenido a Quito-Clima =====

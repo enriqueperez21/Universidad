@@ -1,0 +1,4 @@
+date,city,latitude,longitude,temperature,feels_like,temp_min,temp_max,pressure,humidity,sea_level_pressure,ground_level_pressure,weather_main,weather_description,weather_icon,visibility,wind_speed,wind_deg,wind_gust,cloudiness,sunrise,sunset,timezone,country
+2024-08-13 19:45:02,Quito,-0.2299,-78.5249,285.47,284.45,285.47,285.47,1016,65,1016,724,Clouds,overcast clouds,04n,10000,1.64,87,2.48,89,2024-08-13 11:15:47,2024-08-13 23:22:10,-18000,EC
+2024-08-13 20:00:02,Quito,-0.2299,-78.5249,285.47,284.45,285.47,285.47,1016,65,1016,724,Clouds,overcast clouds,04n,10000,1.64,87,2.48,89,2024-08-13 11:15:47,2024-08-13 23:22:10,-18000,EC
+2024-08-13 20:15:02,Quito,-0.2333,-78.5167,286.65,285.73,286.65,286.65,1016,64,1016,738,Clouds,overcast clouds,04n,10000,1.71,87,2.57,88,2024-08-13 11:15:45,2024-08-13 23:22:08,-18000,EC
